@@ -13,7 +13,7 @@ import setting
 """
 
 class Vehicle:
-    def __init__(self, position, speed):
+    def __init__(self, position:int, speed:int):
         """
         車両の初期位置と初期速度を設定。
         position: 車両の初期位置（整数）
@@ -21,8 +21,6 @@ class Vehicle:
         """
         self.position = position  # 現在の車両位置を保存
         self.speed = speed  # 現在の車両速度を保存
-        self.gap
-        self.preceding_vehicle_position
 
 
     def move(self, new_position):
@@ -32,12 +30,11 @@ class Vehicle:
         """
         self.position = new_position
 
-    def accelerate(self, max_speed):
+    def accelerate(self):
         """
         車両を加速させます。現在の速度が最大速度より小さい場合、速度を1増やす。
-        max_speed: 車両の最大速度
         """
-        if self.speed < max_speed:
+        if self.speed < setting.Const().MAX_SPEED: #車両の最大速度
             self.speed += 1
 
     def deceleration(self,road,max_speed,boundary_condition):
@@ -69,3 +66,10 @@ class Vehicle:
         if np.random.rand() < probability:
             self.speed = max(0, self.speed - 1)  # 減速しても速度が負にならないようにする
 
+
+
+if __name__ == "__main__":
+    vehicle1 = Vehicle(1,1)
+
+    vehicle1.accelerate()
+    print(vehicle1.speed)
