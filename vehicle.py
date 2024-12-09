@@ -4,10 +4,6 @@ import numpy as np
 変数:
 車両の位置
 車両の速度
-車両の加速度
-車両の減速確率
-車両の最大速度
-車両の全長
 先行車両との車間距離
 先行車両の位置
 """
@@ -21,10 +17,6 @@ class Vehicle:
         """
         self.position = position  # 現在の車両位置を保存
         self.speed = speed  # 現在の車両速度を保存
-        self.acceleration 
-        self.deceleration_probability
-        self.max_speed
-        self.vehicle_length
         self.gap
         self.preceding_vehicle_position
         
