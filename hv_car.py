@@ -1,15 +1,19 @@
 import numpy as np
 """
-車両の動きに関するクラス
-車両の位置更新
-加速
-減速
-ランダム減速
-を提供
+車両の動きクラス
+変数:
+車両の位置
+車両の速度
+車両の加速度
+車両の減速確率
+車両の最大速度
+車両の全長
+先行車両との車間距離
+先行車両の位置
 """
 
 class Vehicle:
-    def __init__(self, position, speed=0):
+    def __init__(self, position, speed):
         """
         車両の初期位置と初期速度を設定。
         position: 車両の初期位置（整数）
@@ -17,6 +21,15 @@ class Vehicle:
         """
         self.position = position  # 現在の車両位置を保存
         self.speed = speed  # 現在の車両速度を保存
+        self.acceleration = acceleration
+        self.deceleration_probability = deceleration_probability
+        self.max_speed
+        self.vehicle_length
+        self.gap
+        self.preceding_vehicle_position
+        
+
+
 
     def move(self, new_position):
         """
