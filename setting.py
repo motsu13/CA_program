@@ -8,6 +8,8 @@ class Const(object):
     _MAX_SPEED = 5
     _VEHICLE_LENGTH = 1
 
+    _ROAD_LENGTH = 100
+
     @property
     def ACCELERATION(self):
         return self._ACCELERATION
@@ -28,8 +30,9 @@ class Const(object):
     def VEHICLE_LENGTH(self):
         return self._VEHICLE_LENGTH
     
-    
-
+    @property
+    def ROAD_LENGTH(self):
+        return self._ROAD_LENGTH
 
 if __name__ == "__main__":
     print(Const().DECELERATION)
