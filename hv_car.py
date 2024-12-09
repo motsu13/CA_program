@@ -21,8 +21,8 @@ class Vehicle:
         """
         self.position = position  # 現在の車両位置を保存
         self.speed = speed  # 現在の車両速度を保存
-        self.acceleration = acceleration
-        self.deceleration_probability = deceleration_probability
+        self.acceleration 
+        self.deceleration_probability
         self.max_speed
         self.vehicle_length
         self.gap
