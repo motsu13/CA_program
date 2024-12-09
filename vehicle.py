@@ -1,4 +1,8 @@
 import numpy as np
+
+#定数ファイル
+import setting
+
 """
 車両の動きクラス
 変数:
@@ -19,20 +23,18 @@ class Vehicle:
         self.speed = speed  # 現在の車両速度を保存
         self.gap
         self.preceding_vehicle_position
-        
-
 
 
     def move(self, new_position):
         """
-        車両の位置を更新します。
+        車両の位置を更新。
         new_position: 車両が移動する新しい位置
         """
         self.position = new_position
 
     def accelerate(self, max_speed):
         """
-        車両を加速させます。現在の速度が最大速度より小さい場合、速度を1増やします。
+        車両を加速させます。現在の速度が最大速度より小さい場合、速度を1増やす。
         max_speed: 車両の最大速度
         """
         if self.speed < max_speed:
@@ -40,7 +42,7 @@ class Vehicle:
 
     def deceleration(self,road,max_speed,boundary_condition):
         """
-        前の車両までの距離と自分の速度を比較し、距離が小さければ速度を減速させる。
+        前の車両までの距離と自分の速度を比較し、距離が小さければ速度を減速。
         """
         length_vehicle = 1#車両の全長
         distance_next_vehicle = 1 # 次の車両までの車間距離
@@ -61,7 +63,7 @@ class Vehicle:
 
     def random_decelerate(self, probability):
         """
-        指定された確率で車両をランダムに減速させます。
+        指定された確率で車両をランダムに減速。
         probability: 車両が減速する確率（0から1の範囲）
         """
         if np.random.rand() < probability:
