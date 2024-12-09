@@ -3,6 +3,7 @@
 """
 class Const(object):
     _ACCELERATION = 1
+    _DECELERATION = 1
     _DECELERATION_PROBABILITY = 0.5
     _MAX_SPEED = 5
     _VEHICLE_LENGTH = 1
@@ -10,6 +11,10 @@ class Const(object):
     @property
     def ACCELERATION(self):
         return self._ACCELERATION
+    
+    @property
+    def DECELERATION(self):
+        return self._DECELERATION
     
     @property
     def DECELERATION_PROBABILITY(self):
@@ -27,5 +32,5 @@ class Const(object):
 
 
 if __name__ == "__main__":
-    print(Const().ACCELERATION)
+    print(Const().DECELERATION)
     
