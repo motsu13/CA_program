@@ -25,19 +25,19 @@ class NaschModel:
         """
         （Naschモデルのルールに従い）各車両の位置と速度を更新。
         """
-        for veh in self.vehicles:
+        for i in len(self.vehicles):
             # 1. 加速（速度が最大速度に達するまで速度を増加）
-            veh.accerate()
+            self.vehicles[i].accerate()
             # 2. 前方の車両までの距離に応じた減速
-            veh.deceleration()
+            self.vehicles[i].deceleration()
             # 3. ランダム減速（指定された確率で減速）
-            veh.random_decelerate()
+            self.vehicles[i].random_decelerate()
             # 4. 新しい位置を計算して車両を移動
-            veh.move()
+            self.vehicles[i].move()
             
             # 更新したvehicleパラメータが道路上かどうかを確認し、道路外の場合は境界条件によって処理する
             boundary.BoundaryCondition().check_condition(self.condition,self.vehicles)
-            
+
 
 
 
