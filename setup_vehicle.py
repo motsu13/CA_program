@@ -1,12 +1,9 @@
 import vehicle
 import setting
 import numpy as np
-
 """
 道路を生成し、道路上にに車両を生成する。
 """
-
-
 
 class SetupVehicle:
     def __init__(self):
