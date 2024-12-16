@@ -56,14 +56,6 @@ class Vehicle:
         if np.random.rand() < setting.Const().DECELERATION_PROBABILITY: #減速するかしないか
             self.speed = max(0, self.speed - setting.Const().DECELERATION)  # 減速しても速度が負にならないようにする
 
-    def update_vehicle_parameter(self,preciding_position):
-        """
-        更新された位置を元に前方車両の位置を正しく取得
-        preceding_position: 先行車両の位置
-        """
-        self.preciding_position = preciding_position #先行車両の位置
-        self.gap = (preciding_position - self.position) - setting.Const().VEHICLE_LENGTH
-        
 
 if __name__ == "__main__":
     vehicle1 = Vehicle(1,1,3)
@@ -77,6 +69,4 @@ if __name__ == "__main__":
     print(vehicle1.position)
     vehicle1.move()
     print(vehicle1.position)
-    print(vehicle1.preciding_position)
-    vehicle1.update_vehicle_parameter(10)
     print(vehicle1.preciding_position)
