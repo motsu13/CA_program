@@ -22,6 +22,9 @@ class NaschModel:
         self.vehicles = initial_setup.vehicles #Vehicleインスタンスのリスト
         self.road = initial_setup.road #道路
 
+        #車両の先行車の位置や車間距離を初期条件に応じて設定
+        boundary.BoundaryCondition().check_condition(condition,self.vehicles)
+
     def update_vehicles(self):
         """
         （Naschモデルのルールに従い）各車両の位置と速度を更新。
