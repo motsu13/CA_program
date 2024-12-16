@@ -18,8 +18,8 @@ class SetupVehicle:
         self.vehicles = []# 車両リスト
         self.road = np.full(setting.Const().ROAD_LENGTH,-1) #道路
 
-        # 車両の位置を一様分布で選択して配置
-        initial_positions = np.random.choice(setting.Const().ROAD_LENGTH,num_vehicle,replace=False)
+        # 車両の位置を一様分布で選択して配置し順番に並べる
+        initial_positions = np.sort(np.random.choice(setting.Const().ROAD_LENGTH,num_vehicle,replace=False))
         
         # 得られた位置を元に車両を道路上に配置
         for i in range(len(initial_positions)):
@@ -34,5 +34,6 @@ if __name__ == "__main__":
     initial = SetupVehicle()
     initial.setup_vehicles(10)
     print(initial.road)
-    print(initial.vehicles)
+    for i in range(10):
+        print(initial.vehicles[i].position)
 
