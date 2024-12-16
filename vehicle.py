@@ -28,7 +28,6 @@ class Vehicle:
         self.preciding_position = preciding_position #先行車両の位置
         self.gap = (preciding_position - position) - setting.Const().VEHICLE_LENGTH
 
-
     def move(self):
         """
         車両の位置を更新。
@@ -63,9 +62,8 @@ class Vehicle:
         preceding_position: 先行車両の位置
         """
         self.preciding_position = preciding_position #先行車両の位置
-        self.gap = (preciding_position - self.position) - setting.Const().VEHICLE.LENGTH
+        self.gap = (preciding_position - self.position) - setting.Const().VEHICLE_LENGTH
         
-
 
 if __name__ == "__main__":
     vehicle1 = Vehicle(1,1,3)
@@ -79,3 +77,6 @@ if __name__ == "__main__":
     print(vehicle1.position)
     vehicle1.move()
     print(vehicle1.position)
+    print(vehicle1.preciding_position)
+    vehicle1.update_vehicle_parameter(10)
+    print(vehicle1.preciding_position)
