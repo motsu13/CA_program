@@ -4,6 +4,7 @@ import setting
 class BoundaryCondition:
     """
     変数変更後の車両の値が道路上にあるか確認し、なかった場合、適切な値に修正する
+    また、先行車の位置やその車間距離も境界条件に応じて適切に修正する
     """
     def __init__(self):
         pass
